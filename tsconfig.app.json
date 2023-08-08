@@ -1,0 +1,22 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "package.json",
+    "node_modules/@vue/runtime-core/dist/runtime-core.d.ts"
+  ],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "strictNullChecks":false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
