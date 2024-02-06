@@ -19,6 +19,7 @@ export default {
   right: 9px;
   border-radius: 5px;
   padding: 23px 26px;
+  z-index: 40;
 }
 
 .bg-wrap {

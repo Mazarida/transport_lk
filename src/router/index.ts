@@ -35,6 +35,27 @@ const router = createRouter({
       component: () => import('@/views/UserProfileView.vue'),
     },
     {
+      path: '/profile/notifications',
+      name: 'profile-notifications',
+      meta: {
+        layout: 'main',
+        title: 'Уведомления пользователя',
+        auth: true
+      },
+      component: () => import('@/views/UserNoitificationsView.vue'),
+    },
+    {
+      path: '/profile/admin',
+      name: 'profile-admin',
+      meta: {
+        layout: 'main',
+        title: 'Администрирование',
+        auth: true,
+        admin: true,
+      },
+      component: () => import('@/views/UserAdminView.vue'),
+    },
+    {
       path: '/orders/:archive',
       name: 'orders-archive',
       meta: {
@@ -72,10 +93,22 @@ router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title}`
 
   const store = useStore()
-  const isAuthenticated = store.getters["auth/isAuthenticated"]
-  const requireAuth = to.matched.some(record => record.meta.auth)
+  console.log('store:', store);
+  
+  const isAdmin = store.state.auth.isAdmin
+  const isAuthenticated = !!store.state.auth.token
 
-  if (requireAuth && !isAuthenticated) {
+  const requireAuth = to.matched.some(record => record.meta.auth)
+  const requireAdmin = to.matched.some(record => record.meta.admin)
+
+  console.log('isAdmin', isAdmin, 'isAuthenticated', isAuthenticated);
+  console.log('requireAuth', requireAuth, 'requireAdmin', requireAdmin);
+  
+  
+
+  if (requireAdmin && !isAdmin) {
+    next('/login?message=login')
+  } else if (requireAuth && !isAuthenticated) {
     next('/login?message=login')
   } else if (!requireAuth && isAuthenticated) {
     next('/')

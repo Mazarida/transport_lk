@@ -10,6 +10,9 @@ export default {
       logoutActive: false,
     }
   },
+  async mounted() {
+    await this.$store.dispatch('user/getProfile', this.$store.state.auth.token)
+  },
   computed: {
     userName() {
       return this.$store.state.user.userProfile.userName || 'уважаемый клиент'
@@ -48,7 +51,7 @@ export default {
 }
 .main-layout__contents {
   padding: 24px 18px;
-  flex-grow: 1;
+  width: 100%;
 }
 .main-layout__header {
   font-size: 13px;

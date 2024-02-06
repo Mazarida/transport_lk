@@ -4,7 +4,7 @@
       Форма связи с персональным менеджером
     </div>
     <div class="manager-group">
-      <div class="manager-photo" :style="`background-image: url('/img/managers_photo/${profile.userId}.jpg')`"></div>
+      <div class="manager-photo" :style="`background-image: url('/img/managers_photo/${profile.empId}.jpg')`"></div>
       <div class="manager-name">
         Ваш менеджер <br>
         {{ profile.managerName }}
@@ -95,8 +95,8 @@ export default {
         token: this.$store.state.auth.token,
         subject: 'Сообщение из формы обратной связи "Связаться с менеджером"',
         text: `<p><strong>Сообщение из формы обратной связи "Связаться с менеджером"</strong></p>
-<br>
-<p>Текст сообщения: ${this.textMessage}</p>`
+              <br>
+              <p>Текст сообщения: ${this.textMessage}</p>`
       }
 
       await messageService.sendMessage(formData)
@@ -111,16 +111,17 @@ export default {
             } else {
               this.errorMessage = 'Ошибка при отправке сообщения'
             }
-            console.log(err)
           })
     }
   },
   computed: {
     profile() {
-      //console.log(this.$store.state.user.profile)
       return this.$store.state.user.userProfile
     },
   },
+  mounted() {
+    // this.$store.dispatch('user/getProfile', this.$store.state.auth.token)
+  }
 }
 </script>
 <style scoped>

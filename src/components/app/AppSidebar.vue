@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { useStore } from "vuex"
+// import { useRouter } from 'vue-router'
+// import { useStore } from "vuex"
 import { ref } from "vue";
+import store from "@/store";
+
+const isAdmin = store.getters["auth/isAdmin"]
 
 const links = [
   {title: 'Заказы', url: '/', icon: 'orders'},
@@ -14,15 +17,15 @@ const links = [
 const cropMenu = ref(false)
 const mobileMenuActive = ref(false)
 
-const router = useRouter()
-const store = useStore()
+// const router = useRouter()
+// const store = useStore()
 
-const logout = async () => {
-  await store.dispatch('auth/logout')
-      .then(() => {
-        router.push('/login?message=logout')
-      })
-}
+// const logout = async () => {
+//   await store.dispatch('auth/logout')
+//       .then(() => {
+//         router.push('/login?message=logout')
+//       })
+// }
 </script>
 
 <template>
@@ -69,11 +72,11 @@ const logout = async () => {
   cursor: pointer;
 }
 .sidebar__logo {
-  background-image: url("@/assets/img/sidebar__logo.png");
+  background-image: url("@/assets/img/sidebar__logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 100px;
-  height: 28px;
+  height: 45px;
   display: block;
 }
 .sidebar__link {

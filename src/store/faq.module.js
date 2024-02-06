@@ -1,10 +1,10 @@
 import FaqService from '../services/faq.service'
 
-const question = {
-  id: null,
-  question: '',
-  answer: '',
-}
+// const question = {
+//   id: null,
+//   question: '',
+//   answer: '',
+// }
 
 export const faq = {
   namespaced: true,

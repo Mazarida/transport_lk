@@ -6,80 +6,35 @@ const templateColumnFilter = [
     title: '№ заказа',
     isVisible: true,
     required: true,
+    order: 0,
   },
   {
     data: 'orderNumberClient',
     title: '№ заказа клиента',
     isVisible: true,
     required: false,
+    order: 1,
   },
   {
     data: 'senderName',
     title: 'Отправитель',
     isVisible: true,
     required: false,
+    order: 2,
   },
   {
     data: 'transportNumber',
     title: '№ транспортного средства',
     isVisible: true,
     required: false,
+    order: 3,
   },
   {
     data: 'transportType',
     title: 'Тип ТС',
     isVisible: true,
     required: false,
-  },
-  {
-    data: 'datePlaningFinish',
-    title: 'Дата доставки на склад',
-    isVisible: true,
-    sort: ['date', 'desc'],
-    required: false,
-  },
-  {
-    data: 'importExport',
-    title: 'Направление перевозки',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'countryName',
-    title: 'Страна отгрузки',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'cityName',
-    title: 'Город отгрузки',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'deliveryConditions',
-    title: 'Условия поставки',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'weightGross',
-    title: 'Вес брутто груза',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'status',
-    title: 'Статус',
-    isVisible: false,
-    required: false,
-  },
-  {
-    data: 'dateReadyClient',
-    title: 'Дата готовности груза от клиента',
-    isVisible: false,
-    sort: ['date', 'desc'],
-    required: false,
+    order: 4,
   },
   {
     data: 'dateReadyVendor',
@@ -87,6 +42,57 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 5,
+  },
+  {
+    data: 'importExport',
+    title: 'Направление перевозки',
+    isVisible: false,
+    required: false,
+    order: 6,
+  },
+  {
+    data: 'countryName',
+    title: 'Страна отгрузки',
+    isVisible: false,
+    required: false,
+    order: 7,
+  },
+  {
+    data: 'cityName',
+    title: 'Город отгрузки',
+    isVisible: false,
+    required: false,
+    order: 8,
+  },
+  {
+    data: 'deliveryConditions',
+    title: 'Условия поставки',
+    isVisible: false,
+    required: false,
+    order: 9,
+  },
+  {
+    data: 'weightGross',
+    title: 'Вес брутто груза',
+    isVisible: false,
+    required: false,
+    order: 10,
+  },
+  {
+    data: 'status',
+    title: 'Статус',
+    isVisible: false,
+    required: false,
+    order: 11,
+  },
+  {
+    data: 'dateReadyClient',
+    title: 'Дата готовности груза от клиента',
+    isVisible: false,
+    sort: ['date', 'desc'],
+    required: false,
+    order: 12,
   },
   {
     data: 'datePlaningLoad',
@@ -94,6 +100,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 13,
   },
   {
     data: 'dateActualLoad',
@@ -101,6 +108,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 14,
   },
   {
     data: 'datePlaningOut',
@@ -108,6 +116,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 15,
   },
   {
     data: 'dateActualOut',
@@ -115,6 +124,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 16,
   },
   {
     data: 'datePlaningOutShipOcean',
@@ -122,6 +132,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 17,
   },
   {
     data: 'dateActualOutShipOcean',
@@ -129,6 +140,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 18,
   },
   {
     data: 'datePlaningOutShipFeeder',
@@ -136,6 +148,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 19,
   },
   {
     data: 'dateActualOutShipFeeder',
@@ -143,6 +156,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 20,
   },
   {
     data: 'datePlaningBorderTransport',
@@ -150,6 +164,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 21,
   },
   {
     data: 'dateActualBorderTransport',
@@ -157,6 +172,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 22,
   },
   {
     data: 'dateActualRWStationOut',
@@ -164,6 +180,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 23,
   },
   {
     data: 'datePlaningRWStationIn',
@@ -171,6 +188,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 24,
   },
   {
     data: 'dateActualRWStationIn',
@@ -178,12 +196,22 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 25,
   },
   {
     data: 'rwStationDest',
     title: 'Наименование ЖД станции назначения в РФ',
     isVisible: false,
     required: false,
+    order: 26,
+  },
+  {
+    data: 'datePlaningFinish',
+    title: 'Дата доставки на склад',
+    isVisible: true,
+    sort: ['date', 'desc'],
+    required: false,
+    order: 27,
   },
   {
     data: 'dateActualFinish',
@@ -191,12 +219,14 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 28,
   },
   {
     data: 'deliveryAddress',
     title: 'Адрес доставки',
     isVisible: false,
     required: false,
+    order: 29,
   },
   {
     data: 'dateDTFilling',
@@ -204,6 +234,7 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 30,
   },
   {
     data: 'dateDTRelease',
@@ -211,30 +242,35 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 31,
   },
   {
     data: 'customPlace',
     title: 'Место таможенного оформления',
     isVisible: false,
     required: false,
+    order: 32,
   },
   {
     data: 'isInspected',
     title: 'Досмотр',
     isVisible: false,
     required: false,
+    order: 33,
   },
   {
     data: 'isIDK',
     title: 'ИДК',
     isVisible: false,
     required: false,
+    order: 34,
   },
   {
     data: 'isWeighing',
     title: 'Взвешивание',
     isVisible: false,
     required: false,
+    order: 35,
   },
   {
     data: 'legalEntityName',
@@ -242,30 +278,42 @@ const templateColumnFilter = [
     isVisible: false,
     sort: ['date', 'desc'],
     required: false,
+    order: 36,
   },
   {
     data: 'deliveryType',
     title: 'Тип перевозки',
     isVisible: false,
     required: false,
+    order: 37,
   },
   {
     data: 'serviceType',
     title: 'Тип услуги',
     isVisible: false,
     required: false,
+    order: 38,
   },
   {
     data: 'cargoName',
     title: 'Наименование груза',
     isVisible: false,
     required: false,
+    order: 39,
   },
   {
     data: 'deliveryConditions',
     title: 'Условия поставки',
     isVisible: false,
     required: false,
+    order: 40,
+  },
+  {
+    data: 'individualSettings',
+    title: 'Информация о заказе',
+    isVisible: false,
+    required: false,
+    order: 41,
   },
 ]
 
@@ -315,6 +363,13 @@ export const column = {
   mutations: {
     setColumnFilter(state, columnFilter) {
       state.columnFilter = columnFilter
+    },
+    setColumnFilterOrder(state, newOrder) {
+      let index = 0
+      newOrder.map(order => {
+        state.columnFilter[index].order = order
+        index++;
+      })
     },
     defaultColumnFilter(state) {
       state.columnFilter = defaultColumnFilter()

@@ -12,10 +12,9 @@ class UserService {
         }
       })
       .then(response => {
-        console.log(response.data)
         const userProfile = {
           // managerId
-          userId: parseInt(response.data.ID) || null,
+          empId: parseInt(response.data.EMP_ID) || null,
           userName: response.data.FIO || '',
           userPhone: response.data.PHONE || '',
           userEmail: response.data.EMAIL || '',
@@ -71,8 +70,6 @@ class UserService {
         params: JSON.stringify(profile.params),
       })
       .then(response => {
-        //console.log(response.data)
-
         if (response.data?.result === 'ok') {
           localStorage.setItem('userProfile', JSON.stringify(profile))
 
@@ -84,6 +81,23 @@ class UserService {
   }
 
   updateProfile(formData) {
+    return fetch(API_URL + 'info/write.php', {
+      method: 'POST',
+      body: JSON.stringify({
+        key: formData.token,
+        fio: formData.fio,
+        phone: formData.phone,
+        email: formData.email,
+      })
+    })
+    .then(response => {
+      console.log('response::', response)
+      if (response.ok === true) {
+        return 'Профиль успешно обновлен'
+      }
+
+      throw new Error('Ошибка при обновлении профиля')
+    })
     return axios
       .post(API_URL + `info/write.php`, {
         key: formData.token,

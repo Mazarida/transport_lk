@@ -1,9 +1,22 @@
-<svg width="105" height="28" viewBox="0 0 105 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="105" height="28" fill="url(#pattern0)"/>
-<defs>
-<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_25_687" transform="scale(0.0114943 0.0416667)"/>
-</pattern>
-<image id="image0_25_687" width="87" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAYCAYAAACPxmHVAAAFjElEQVRogbWZaYyeUxTHfzNebafTlhnFtERSa2MtxlIapUopVXxpfBC0tSSWCD4QlAhqiy/EFjFpfFBJpdZEhcTaooJKtKilpVqtUbXUTGdqrhz5X7lunuU+7zv9J0+e7d5zz3Puuef+z3manHMbgWHAdupHu3o6oCnj+g/gHODNaIQXgRl1jl0DLgWeDJ7ZGLcBh+n93wX9TbdmoBf4BLga+Dh4PwZ4FDgZGFUiy8uzYwOwGLjWFNijjg+LsQW4DvgNGKp3PcDewP3ASGBIRr8WnWt1jrtbcG1jvRC9T5FrOpwALAIOAvr1vAuYVlGWYS/gKuAH6/AXMDyxYxa+BY4Ffsl5/x3wMrBTxrue4PpH4JUKH2Gr7YPg/vjo/dvSKWtctFr2ATp1Pw7YH1gl2ccFbb8GPivQzek8M3h2Qb0e4/E9cFKBYQ3rdM77SI9Pgcsb0GWrJsuvhmuAFSV9pmtCPUbqPCpq9wwwL0GHp4HDFW4+asS4y7ScyuA9oK+k3c4N6GJYIk8cDXTYskzo0xzd+7g6oMNjRKIOF4Y39RrX4tKdwCHBZubRJEN9A6wBjokUz8MwGaYWbIRZMINsjkIKMka3ji+C5+2SORC176mw3xTpk4t6jOuk/O3aUWMMaPMy75kdbHAuX+S/sFXwlcJH0cc0aeNcoqW/tUSuLfvxGcbdBrSW9G0IVY37EzBVRtglxxv9kpoqqnRoomzTpS2x7QhNnE3Y3JK2xgB2TZQ7qKhiXFtuk7Tc/X0RFsvIzyfKXw+8pJCS5bkWs8cCZwfvT0+Qu1bG7Y2e92tVDc3p1zBSjbtRG9PaigNWSQ6MyF+R0G4hMEvXvTJ0UciZpngeb6i9kvNYBR0rIcW4a2TYTXXIn1ihbSrX3hBc522SbTJeT4ne6xPH3CEbWp+4pwX/AxMUGFCqa7GZiIiXId79UxB+tG2I9wG7K3M7OmGlxZuhl9cc0bQiHh/iImA/yVldZtzVYgVjEwQ7xa8xIu8zovS0DB0y0JAM/ok8sUMx1yOMl5ZdnRjc36TsMY8/m+NMiJ75ttui56dq8vPis5NjzQ+e5RrXZvQsYKV4YkxjsuAp2L7AA8DNCdw2xFHAexXaI0rm4+3K6F092d6aQO6WgGVM1lEFS3HObXX/h90f4ZyjweMN51x/IHlKhrzlrn5sd86dEcnrakDe3EjWrAZkbXLOjY891+jJKQk5eQrWJcT0exWj+tNE/lfWswztHYWtEJeoDnCAagxlK870+xN4V4WZEM/q2cSAfxexEr/nGLN63TbSWtChV0WY5YkfWoaU7GfRII0V4jUdg4FVOupCc2CEyYNoWMPBDfTdYcS+AWRtsoWoqU5wLvDlICpidGhcQruHgJ+BO3TfpUm5OMFjnlCh5/ySdjO1ubVolQ5RdnlXgTPNk7M1KQGxfnOighCqg9ifj9MU2vwEWI38QTPuc6rid9ZLlgXjgh/qfKSUKsNsFVZaZczhqhWUTfQU1S0Ml8nQeTDjngmcp5jYrHDUkVFg97hRYXKearzdKvrHsLrJrarjrpCxzci3mKOYcW8QbRoMdItSpZbylspTrdK/QB+VgoXi0b8DbwFPFaTam9XO0ywnz2opGMc47avAwyW6+PB1d+TV9k3Ty2qnVTE6yOhS0K9EoyOjsJKHOQo7bUHKfI+cJAu/yvseD7j451rOeejL+BuRBc/j42K6Gb2/lvPjsBFMykkesjKlCfKQ+QoFV+oP7rKc8UcpBKxS+GgSXbpef4HjmEiQjlZJxdtVUi2Dp5qdco6aJsayxbaa+GhrBa5ZhnH6GF8wsRhnhs2qHVjub7Ps68NGoexnphnZln4MC18mN2YiJsfqCjYxMYx3Vq3mWZjy//6KYHq/rw3ZVojZ08LTnsAj/wAAamHNVs4bFQAAAABJRU5ErkJggg=="/>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="30mm" height="15mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3000 1500"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#FEFEFE;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M662.51 777.98l-416.68 0 0 -211.44 416.68 0c31.38,0 53.5,4.64 66.36,13.89 11.32,9.78 16.97,26.24 16.97,49.39l0 85.14c0,23.15 -5.65,39.61 -16.97,49.38 -12.35,9 -34.47,13.64 -66.36,13.64zm-598.79 -659.24l0 796.59 680.58 0c62.5,0 109.06,-11.84 139.15,-35.5 27.53,-24.69 41.41,-64.56 41.41,-119.09l0 -177.48c0,-53.24 -13.88,-92.34 -41.41,-117.03 -29.58,-24.69 -76.13,-37.03 -139.15,-37.03l-498.47 0 0 -172.85 653.32 0 -0.27 -137.61 -653.05 0 -182.11 0z"/>
+  <path class="fil0" d="M63.72 1352.43l0 -289.78 67.96 0 0 120.74 160.61 -120.74 97.62 0 -192.06 136.56 215.64 153.22 -108.28 0 -173.53 -127.48 0 127.48 -67.96 0zm752.99 -115.69l126.83 0 -62.81 -117.93 -64.02 117.93zm-129.82 115.69l163.42 -289.78 65.05 0 166.33 289.78 -75.82 0 -34.82 -63.46 -183.54 0 -33.7 63.46 -66.92 0zm906.13 -239.8l-151.63 0 0 76.94 151.63 0c11.79,0 19.84,-1.69 24.15,-5.06 4.11,-3.36 6.17,-9.36 6.17,-17.97l0 -30.88c0,-8.61 -2.06,-14.61 -6.17,-17.97 -4.31,-3.37 -12.36,-5.06 -24.15,-5.06zm-217.9 239.8l0 -289.78 247.57 0c22.74,0 39.68,4.31 50.63,13.01 10.11,8.89 15.17,23.21 15.17,43.15l0 64.58c0,19.47 -5.06,33.6 -15.26,42.59 -10.67,9.08 -27.52,13.57 -50.54,13.57l-181.3 0 0 112.88 -66.27 0zm659.02 0l0 -289.78 264.51 0 -31.54 50.54 -165.58 0 0 239.24 -67.39 0zm550.08 -221.27c0,-26.2 4.87,-44.17 14.51,-53.82 10.39,-9.82 29.48,-14.69 57.37,-14.69l213.31 0c28.08,0 46.99,4.87 56.72,14.69 10.21,9.55 15.26,27.52 15.26,53.82l0 152.76c0,26.39 -5.05,44.36 -15.26,54 -9.82,9.64 -28.73,14.51 -56.72,14.51l-213.31 0c-27.8,0 -46.89,-4.87 -57.37,-14.51 -9.64,-9.73 -14.51,-27.7 -14.51,-54l0 -152.76zm67.39 166.8l222.39 0 0 -183.64 -222.39 0 0 183.64z"/>
+  <path class="fil0" d="M2756.3 260.98l-500.02 0 0 504.65 500.02 0 0 -51.91 185.19 0 0 13.07c0,72.28 -13.37,121.66 -40.38,148.67 -28.55,26.49 -81.02,39.87 -157.42,39.87l-474.81 0c-76.39,0 -128.86,-13.38 -157.41,-39.87 -27.01,-27.01 -40.38,-76.39 -40.38,-148.41l0 -419.78c0,-71.76 13.37,-121.14 40.38,-147.89 28.29,-27.01 80.76,-40.38 157.41,-40.38l474.81 0c76.66,0 129.12,13.37 157.42,40.38 27.01,26.75 40.38,76.13 40.38,147.89l0 13.08 -185.19 0 0 -59.37z"/>
+  <path class="fil0" d="M1252.49 260.9l490.97 0 0 169.81 -390.96 0 0 155.92 390.96 0 0 179.07 -490.97 0 0 -80.57 -181.84 14.88c0,60.45 -5.07,131.69 39.66,175.56 27.52,27 79.55,39.88 154.55,39.88l498.04 0c20.71,0 43.69,-4.38 68.95,-13.12 25.25,-9.01 47.23,-24.45 65.66,-47.09 18.44,-22.38 27.78,-52.23 27.78,-89.54l0 -368.96 0 -89.53c0,-71.79 -13.13,-121.19 -39.65,-148.2 -27.78,-26.76 -79.3,-40.14 -154.56,-40.14l-466.22 0c-75.25,0 -127.16,13.01 -154.55,40.14 -41.22,40.81 -39.66,111.6 -39.66,166.67l181.84 15.03 0 -79.81z"/>
+ </g>
 </svg>

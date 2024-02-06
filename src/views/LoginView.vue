@@ -18,6 +18,7 @@ export default {
     const state = reactive({
       login: '',
       password: '',
+      hidePass: true,
     })
     const resetPassActive = ref(false)
 
@@ -56,7 +57,7 @@ export default {
 <template>
   <form class="auth__form" @submit.prevent="submitHandler">
     <div class="login__header">
-      <img class="login__logo" src="@/assets/img/login__logo.png" alt="">
+      <img class="login__logo" src="@/assets/img/login__logo.svg" alt="">
       <div class="login__workhours">
         <div class="icon-clock"></div>
         <div class="login__workhours-legend">
@@ -105,7 +106,16 @@ export default {
 
       <div class="auth-form__input-group">
         <label class="auth-form__input-group-label" for="password">Пароль:</label>
-        <input class="auth-form__input-group-input" id="password" type="password" v-model.trim="state.password" @blur="v$.password.$touch">
+        <div class="pass-changr">
+          <input class="auth-form__input-group-input" id="password" :type="state.hidePass ? 'password' : 'text'" v-model.trim="state.password" @blur="v$.password.$touch">
+          <div @click="state.hidePass = !state.hidePass" :class="{'pass-chengr__toggle': true, active: !state.hidePass}">
+            <svg fill="#000000" height="80px" width="80px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+              <g>
+                <path d="m494.8,241.4l-50.6-49.4c-50.1-48.9-116.9-75.8-188.2-75.8s-138.1,26.9-188.2,75.8l-50.6,49.4c-11.3,12.3-4.3,25.4 0,29.2l50.6,49.4c50.1,48.9 116.9,75.8 188.2,75.8s138.1-26.9 188.2-75.8l50.6-49.4c4-3.8 11.7-16.4 0-29.2zm-238.8,84.4c-38.5,0-69.8-31.3-69.8-69.8 0-38.5 31.3-69.8 69.8-69.8 38.5,0 69.8,31.3 69.8,69.8 0,38.5-31.3,69.8-69.8,69.8zm-195.3-69.8l35.7-34.8c27-26.4 59.8-45.2 95.7-55.4-28.2,20.1-46.6,53-46.6,90.1 0,37.1 18.4,70.1 46.6,90.1-35.9-10.2-68.7-29-95.7-55.3l-35.7-34.7zm355,34.8c-27,26.3-59.8,45.1-95.7,55.3 28.2-20.1 46.6-53 46.6-90.1 0-37.2-18.4-70.1-46.6-90.1 35.9,10.2 68.7,29 95.7,55.4l35.6,34.8-35.6,34.7z"/>
+              </g>
+            </svg>
+          </div>
+        </div>
         <div class="auth-form__input-group-errors">
           <div class="auth-form__input-group-error" v-if="v$.password.$dirty && v$.password.required.$invalid">
             Поле "Пароль" не должно быть пустым
@@ -159,7 +169,7 @@ export default {
   display: block;
   width: 100%;
   height: 53px;
-  border: 1px solid #ACACAC;
+  border: 2px solid #ACACAC;
   border-radius: 5px;
   margin-bottom: 7px;
   line-height: 53px;
@@ -353,6 +363,29 @@ a.login__phones-number {
 .remember-me + .auth-form__input-group-errors:before {
   display: none;
 }
+.pass-changr {
+  position: relative;
+}
+
+.pass-chengr__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 47px;
+  padding: 16px 14px 0;
+  cursor: pointer;
+  opacity: .5;
+}
+
+.pass-chengr__toggle.active {
+  opacity: 1;
+}
+
+.pass-chengr__toggle svg {
+  width: 100%;
+  height: auto;
+}
+
 
 @media (max-width: 1170px) {
   .login__header {

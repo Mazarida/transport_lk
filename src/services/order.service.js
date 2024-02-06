@@ -1,4 +1,6 @@
 import axios from 'axios'
+import router from "@/router";
+import store from "@/store";
 
 const API_URL = 'https://lk.bescargo.ru//api/'
 
@@ -13,7 +15,6 @@ class OrderService {
       .post(API_URL + 'order/read.php', params)
       .then(response => {
         let orders = []
-
         if (response.data.error === undefined) {
           if (Array.isArray(response.data)) {
             response.data.forEach(order => {
@@ -27,6 +28,7 @@ class OrderService {
                   isArchived: order.IS_ARCHIVED && order.IS_ARCHIVED !== '-' ? order.IS_ARCHIVED : '',
                   orderNumber: order.ORD_NUM_INT && order.ORD_NUM_INT !== '-' ? order.ORD_NUM_INT : '',
                   orderNumberClient: order.ORD_NUM_CUS && order.ORD_NUM_CUS !== '-' ? order.ORD_NUM_CUS : '',
+                  individualSettings: order.INDIVIDUAL_SETTINGS && order.INDIVIDUAL_SETTINGS !== '-' ? order.INDIVIDUAL_SETTINGS : '',
                   transportNumber: order.TRANSPORT_NUM && order.TRANSPORT_NUM !== '-' ? order.TRANSPORT_NUM : '',
                   deliveryAddress: order.D_ADDRESS && order.D_ADDRESS !== '-' ? order.D_ADDRESS : '',
                   weightGross: order.BRUTTO && order.BRUTTO !== '-' ? order.BRUTTO : '',
@@ -72,7 +74,10 @@ class OrderService {
             })
           }
         } else {
-          throw new Error("Что-то пошло не так...")
+            store.dispatch('auth/logout')
+                .then(() => {
+                    router.push('/login?message=logout')
+                })
         }
 
         return orders

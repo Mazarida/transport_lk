@@ -2,7 +2,7 @@ import UserService from '../services/user.service'
 
 const defaultUserProfile = {
   // managerId
-  userId: null,
+  empId: null,
   userName: '',
   userPhone: '',
   userEmail: '',
@@ -40,6 +40,7 @@ export const user = {
   },
   actions: {
     getProfile({ commit, dispatch }, token) {
+      console.log('we need profile')
       return UserService.getProfile(token).then(
         userProfile => {
           commit('getProfileSuccess', userProfile)
@@ -176,6 +177,7 @@ export const user = {
     getProfileSuccess(state, userProfile) {
       state.status = 'success'
       state.userProfile = userProfile
+      console.log('updatedProfile:', state.userProfile)
       state.activeColumnFilter = userProfile.params.activeColumnFilter
       state.error = null
     },

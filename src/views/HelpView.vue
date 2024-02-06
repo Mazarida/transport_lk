@@ -123,7 +123,6 @@ export default {
             } else {
               this.errorMessage = 'Ошибка при отправке сообщения'
             }
-            console.log(err)
           })
     }
   }
@@ -149,9 +148,7 @@ export default {
             <div class="help__item-title">
               {{ item.question }}
             </div>
-            <div class="help__item-text">
-              {{ item.answer }}
-            </div>
+            <div class="help__item-text" v-html="item.answer.replace(/\n/g, '<br>')"></div>
           </div>
         </div>
 
@@ -178,7 +175,7 @@ export default {
                 <input
                     id="fio_input"
                     type="text"
-                    placeholder="Андрей Андреевич Бобров"
+                    placeholder="ФИО"
                     class="help__contact-form-input"
                     v-model.trim="userName"
                     @blur="v$.userName.$touch"
@@ -196,7 +193,7 @@ export default {
                 <input
                     id="email_input"
                     type="text"
-                    placeholder="bobrov@gmail.com"
+                    placeholder="mail@example.com"
                     class="help__contact-form-input"
                     v-model.trim="userEmail"
                     @blur="v$.userEmail.$touch"

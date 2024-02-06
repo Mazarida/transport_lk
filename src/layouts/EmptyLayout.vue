@@ -13,9 +13,11 @@ export default {
 <style scoped>
 .empty-layout {
   min-height: 100vh;
-  background-image: url(@/assets/img/bg_auth.jpg);
-  background-size: cover;
-  background-position: top right;
+  background-color: #354FA2;
+  background-image: url(/src/assets/img/bg_auth.svg);
+  background-size: 880px;
+  background-repeat: no-repeat;
+  background-position: calc(50% - -260px) -21px;
   padding: 68px 0;
 }
 </style>
