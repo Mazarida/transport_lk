@@ -3,11 +3,13 @@ import { computed, reactive, ref, toRef, onMounted } from 'vue'
 import MainLayoutSubheader from '@/components/app/MainLayoutSubheader.vue'
 import ManagerForm from '@/components/forms/ManagerForm.vue'
 import ProfileTabs from '@/components/ProfileTabs.vue'
+import ModalPopup from '@/components/ModalPopup.vue'
+import QrcodeVue from 'qrcode.vue'
 import { useStore } from 'vuex'
 
 export default {
   name: 'UserProfileView',
-  components: { ProfileTabs, ManagerForm, MainLayoutSubheader },
+  components: { ProfileTabs, ManagerForm, MainLayoutSubheader, ModalPopup, QrcodeVue },
   setup: () => {
     const store = useStore()
     const columns = reactive([
@@ -25,6 +27,12 @@ export default {
       }
     ])
 
+    const userProfileId = computed(() => store.state.user.userProfile['empId'])
+
+    const modalQrCode = ref(null)
+    const qrCodeLink = computed(() => `https://t.me/BescargoLK_Bot?start=${userProfileId.value}`)
+    const qrCodeSize = ref(150)
+
     const switchCheckbox = (id, value) => {
       store.dispatch('notifications/switchCheckbox', { id, value })
     }
@@ -33,6 +41,12 @@ export default {
       store.dispatch('notifications/updateNotifications', store.state.auth.token)
     }
 
+    const showModalQrCode = () => {
+      modalQrCode.value.modalOpen()
+    }
+
+
+
     const notifications = computed(() => store.state.notifications.notifications)
 
     onMounted(() => store.dispatch('notifications/getNotifications', store.state.auth.token))
@@ -40,22 +54,66 @@ export default {
     return {
       store,
       columns,
+      modalQrCode,
+      qrCodeLink,
+      qrCodeSize,
+      showModalQrCode,
       switchCheckbox,
       updateNotifications,
-      notifications
+      notifications,
+      userProfileId
     }
   }
 }
 </script>
 
 <template>
+  {{ userProfileId }}
+  {{ qrCodeLink }}
   <MainLayoutSubheader>
     <p v-if="store.state.auth.isAdmin" class="subheader-slot">Администратор</p>
   </MainLayoutSubheader>
   <div class="notificationsplace">
     <div>
+      <ModalPopup ref="modalQrCode" class="modal__reset-pass">
+        <div class="modal-qr-code">
+          <div class="modal__header modal-qr-code__header">Наведите камеру на qr-код</div>
+          <!-- qr-code -->
+          <div class="qr-code">
+            <QrcodeVue :value="qrCodeLink" :size="qrCodeSize" level="H"/>
+          </div>
+        </div>
+      </ModalPopup>
       <ProfileTabs current-active="notifications" />
       <div class="user-profile__notifications">
+        <div class="user-sharing">
+          <div class="user-sharing-item">
+            <p class="user-sharing__title">Переходите в телеграм для уведомлений</p>
+            <div class="user-sharing__content">
+              <img
+                class="user-sharing__img"
+                src="@/assets/img/telegram.svg"
+                alt="иконка telegram"
+                width="32"
+                height="32"
+              />
+              <a href="https://t.me/" class="user-sharing__link">Телеграм</a>
+            </div>
+          </div>
+          <div class="user-sharing-item">
+            <p class="user-sharing__title">Если у вас нет телеграм на ПК</p>
+            <div class="user-sharing__content">
+              <img
+                class="user-sharing__img"
+                src="@/assets/img/qr.svg"
+                alt="иконка qr кода"
+                width="32"
+                height="32"
+              />
+              <span class="user-sharing__link" @click="showModalQrCode">Сформировать QR-Code</span>
+            </div>
+          </div>
+        </div>
         <div class="user-notices-header">Мои уведомления</div>
         <table class="user-notices-table">
           <thead>
@@ -106,6 +164,18 @@ export default {
 </template>
 
 <style scoped>
+.modal-qr-code {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-qr-code__header {
+  text-align: center;
+}
+.qr-code {
+  margin-top: 10px;
+}
 .subheader-slot {
   font-fize: 13px;
   font-weight: 700;
@@ -159,7 +229,36 @@ export default {
   width: 590px;
   border-collapse: collapse;
 }
+.user-sharing {
+  display: flex;
+  flex-direction: column;
+}
+.user-sharing-item {
+  display: flex;
+  align-items: center;
+}
+.user-sharing-item:not(:last-child) {
+  margin-bottom: 11px;
+}
+.user-sharing__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.user-sharing__content {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.user-sharing__link {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #2ea6e2;
+  cursor: pointer;
+}
 .user-notices-header {
+  margin-top: 35px;
   font-family: Proxima Nova;
   font-size: 19px;
   font-weight: 700;

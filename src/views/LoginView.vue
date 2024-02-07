@@ -133,9 +133,9 @@ export default {
 
       <div class="auth-form__btn-group">
         <button class="auth-form__submit-btn btn-fw" type="submit">Войти</button>
-        <!--button @click="showModalResetPass" type="button" class="forgot-pass">
+        <!-- <button @click="showModalResetPass" type="button" class="forgot-pass">
           Забыли пароль?
-        </button-->
+        </button> -->
       </div>
       <modal-popup ref="modalResetPass" class="modal__reset-pass" >
         <div class="modal__header">
