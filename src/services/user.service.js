@@ -92,7 +92,7 @@ class UserService {
       })
     })
     .then(response => {
-      console.log('response::', response)
+      // console.log('response::', response)
       if (response.ok === true) {
         return 'Профиль успешно обновлен'
       }

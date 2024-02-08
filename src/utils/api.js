@@ -8,8 +8,8 @@ const apiCall = ({ url, method }) =>
     setTimeout(() => {
       try {
         resolve(mocks[url][method || "GET"])
-        console.log(`Mocked '${url}' - ${method || "GET"}`)
-        console.log("response: ", mocks[url][method || "GET"])
+        // console.log(`Mocked '${url}' - ${method || "GET"}`)
+        // console.log("response: ", mocks[url][method || "GET"])
       } catch (err) {
         reject(new Error(err));
       }

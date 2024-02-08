@@ -159,7 +159,7 @@ const columns = currentFilter.value.map((col) => {
             // return new Date(dateParsed[3], dateParsed[2], dateParsed[1]).getTime()
             return date2Number(data)
           } catch (error) {
-            //console.log('Render error:', error.message)
+            //// console.log('Render error:', error.message)
           }
         }
         return data
@@ -199,7 +199,7 @@ const getOrders = () => {
             dt.on('select', function (e, dat, type, indexes) {
               if (type === 'row') {
                 rowData = JSON.parse(JSON.stringify(dt.rows(indexes[0]).data()[0]))
-                // console.log(rowData)
+                 // console.log(rowData)
                 pointsMap.value = createRoadMap(rowData)
                 modalOrder.value.modalOpen()
               }
@@ -207,7 +207,7 @@ const getOrders = () => {
             dt.columns().colReorder.order(currentFilter.value.map(e => e.order))
           },
           (/*error*/) => {
-            //console.log(error.message)
+            //// console.log(error.message)
           }
       )
 
@@ -216,7 +216,7 @@ const getOrders = () => {
             roadMap.value = points
           },
           (/*error*/) => {
-            //console.log(error.message)
+            //// console.log(error.message)
           }
       )
 
@@ -234,7 +234,7 @@ const onSearchKeyUp = (e) => {
 }
 
 const onSubmitCheckboxes = () => {
-  //console.log(checkboxArray.value)
+  //// console.log(checkboxArray.value)
   store.dispatch("column/changeColumnsVisible", { checkboxesArray: checkboxArray.value, saveFilter: true })
   fullFiltersDropdownActive.value = false
 }
@@ -258,7 +258,7 @@ const deleteCheckboxItem = (colName) => {
 }
 
 const onSearchCheckboxes = (e) => {
-  //console.log(e.target.value)
+  //// console.log(e.target.value)
   searchCheckboxesText.value = e.target.value
 }
 
@@ -279,7 +279,7 @@ const exportPDFData = () => {
     const doc = new JsPDF({
       orientation: "landscape",
     })
-    //console.log(doc.getFontList())
+    //// console.log(doc.getFontList())
 
     // doc.setFont('ProximaNova-Regular', 'normal')
     // doc.setFontSize(8)
@@ -300,8 +300,8 @@ const exportPDFData = () => {
       }
     })
 
-    // console.log(head)
-    // console.log(body)
+     // console.log(head)
+     // console.log(body)
 
     JsPDFAutotable(doc, {
       head: [head],
@@ -321,7 +321,7 @@ const exportPDFData = () => {
 
     doc.save('bescargo_export_data.pdf')
   } catch (error) {
-    // console.log(error.message)
+     // console.log(error.message)
   }
 }
 
@@ -329,7 +329,7 @@ const logReorder = () => {
   // itemsArray.sort((a, b) => sortingArr.indexOf(a) - sortingArr.indexOf(b))
   // onSubmitCheckboxes()
   store.commit('column/setColumnFilterOrder', dt.columns().colReorder.order())
-  // console.log(dt.columns().colReorder.order())
+   // console.log(dt.columns().colReorder.order())
 }
 
 const exportXLSXData = () => {
@@ -354,7 +354,7 @@ const exportXLSXData = () => {
     utils.book_append_sheet(wb, ws, "Лист1")
     writeFileXLSX(wb, "bescargo_export_data.xlsx")
   } catch (error) {
-    //console.log(error.message)
+    //// console.log(error.message)
   }
 }
 
@@ -432,7 +432,7 @@ const createRoadMap = (order) => {
 
 const checkAll = (event) => {
   const newVal = event.target.checked
-  console.log(newVal)
+  // console.log(newVal)
   currentFilter.value.filter(elem => {
       return !elem.required
   }).forEach(col => {

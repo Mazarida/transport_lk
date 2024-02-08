@@ -22,7 +22,7 @@ export const notifications = {
     getNotifications({ commit }, token) {
       return NotificationsService.getNotifications(token).then(
         (notifications) => {
-          // console.log('notifications:', notifications);
+           // console.log('notifications:', notifications);
           commit('getNotificationsSuccess', notifications)
 
           return Promise.resolve(notifications)
@@ -42,7 +42,7 @@ export const notifications = {
         )
         const responses = await Promise.all(promises)
         responses.forEach((response, index) => {
-          console.log(`Уведомление ${state.notifications[index].id}: ${response.data}`)
+          // console.log(`Уведомление ${state.notifications[index].id}: ${response.data}`)
         })
         // commit('removeChangedNotifications')
         dispatch('getNotifications', token)

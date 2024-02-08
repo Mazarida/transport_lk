@@ -93,7 +93,7 @@ router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title}`
 
   const store = useStore()
-  console.log('store:', store);
+  // console.log('store:', store);
   
   const isAdmin = store.state.auth.isAdmin
   const isAuthenticated = !!store.state.auth.token
@@ -101,8 +101,8 @@ router.beforeEach((to, from, next) => {
   const requireAuth = to.matched.some(record => record.meta.auth)
   const requireAdmin = to.matched.some(record => record.meta.admin)
 
-  console.log('isAdmin', isAdmin, 'isAuthenticated', isAuthenticated);
-  console.log('requireAuth', requireAuth, 'requireAdmin', requireAdmin);
+  // console.log('isAdmin', isAdmin, 'isAuthenticated', isAuthenticated);
+  // console.log('requireAuth', requireAuth, 'requireAdmin', requireAdmin);
   
   
 

@@ -33,7 +33,7 @@ export default {
         profileForm.userName = value.userName
         profileForm.userEmail = value.userEmail
         profileForm.userPhone = value.userPhone
-        console.log('profileForm:', profileForm)
+        // console.log('profileForm:', profileForm)
       }
     )
 
@@ -57,7 +57,7 @@ export default {
         const newUserEmail = v$.value.userEmail.$model
         const newUserPhone = v$.value.userPhone.$model
         const newUserPassword = v$.value.userPassword.$model
-        console.log('v$.value:', v$.value)
+        // console.log('v$.value:', v$.value)
 
         // Ни одно поле формы не изменилось
         if (
@@ -80,7 +80,7 @@ export default {
           v$.value.userPassword.$touch()
 
           if (v$.userPassword.$invalid) {
-            //console.log('Password error')
+            //// console.log('Password error')
             return
           }
 
@@ -88,7 +88,7 @@ export default {
             token: store.state.auth.token,
             password: newUserPassword
           }
-          console.log('send password')
+          // console.log('send password')
 
           const { result, msg } = await store.dispatch('user/updatePassword', formData)
 
@@ -114,7 +114,7 @@ export default {
             v$.value.userEmail.$invalid ||
             v$.value.userPhone.$invalid
           ) {
-            //console.log('Fields error')
+            //// console.log('Fields error')
             return
           }
 
@@ -125,7 +125,7 @@ export default {
             phone: newUserPhone
           }
 
-          console.log('send all without password')
+          // console.log('send all without password')
 
           const { result, msg } = await store.dispatch('user/updateProfile', formData)
 
@@ -150,7 +150,7 @@ export default {
             v$.value.userPhone.$invalid ||
             v$.value.userPassword.$invalid
           ) {
-            //console.log('Fields or Password error')
+            //// console.log('Fields or Password error')
             return
           }
 
@@ -162,7 +162,7 @@ export default {
             password: newUserPassword
           }
 
-          console.log('send all')
+          // console.log('send all')
 
           const profileResponse = await store.dispatch('user/updateProfile', formData)
 

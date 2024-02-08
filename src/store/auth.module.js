@@ -65,7 +65,7 @@ export const auth = {
       localStorage.removeItem('isAdmin')
     },
     changeAdmin(state, isAdmin) {
-      console.log('changeAdmin', isAdmin);
+      // console.log('changeAdmin', isAdmin);
       state.isAdmin = isAdmin
       localStorage.setItem('isAdmin', isAdmin)
     }

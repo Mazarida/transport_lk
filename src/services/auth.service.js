@@ -31,14 +31,14 @@ class AuthService {
   }
 
   async isAdmin(token) {
-    console.log('start isAdmin:')
+    // console.log('start isAdmin:')
     return await axios.get(API_URL + 'info/read.php', {
       params: {
         key: token
       }
     })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       if (response.data.PARENT_ID == null) {
         return true
       } else {

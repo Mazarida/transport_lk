@@ -12,7 +12,7 @@ class EmployersService {
         }
       })
       .then((response) => {
-        console.log('employers:', response.data)
+        // console.log('employers:', response.data)
         let employers = []
         if (response.data.error === undefined) {
           if (Array.isArray(response.data)) {
