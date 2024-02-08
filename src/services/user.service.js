@@ -28,6 +28,7 @@ class UserService {
           officeEmail: response.data.OFFICE_EMAIL || '',
           officePhone: response.data.OFFICE_PHONE || '',
           officeWorkHours: response.data.OFFICE_HOURS || '',
+          tlgBotLink: response.data.TLGBOT_LINK || '',
           //params: JSON.parse(response.data.PARAMS || ''),
         }
 

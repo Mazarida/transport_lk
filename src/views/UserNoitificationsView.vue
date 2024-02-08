@@ -27,11 +27,10 @@ export default {
       }
     ])
 
-    const userProfileId = computed(() => store.state.user.userProfile['empId'])
 
     const modalQrCode = ref(null)
-    const qrCodeLink = computed(() => `https://t.me/BescargoLK_Bot?start=${userProfileId.value}`)
     const qrCodeSize = ref(150)
+    const qrCodeLink = computed(() => store.state.user.userProfile['tlgBotLink'])
 
     const switchCheckbox = (id, value) => {
       store.dispatch('notifications/switchCheckbox', { id, value })
@@ -44,8 +43,6 @@ export default {
     const showModalQrCode = () => {
       modalQrCode.value.modalOpen()
     }
-
-
 
     const notifications = computed(() => store.state.notifications.notifications)
 
@@ -61,14 +58,12 @@ export default {
       switchCheckbox,
       updateNotifications,
       notifications,
-      userProfileId
     }
   }
 }
 </script>
 
 <template>
-  {{ userProfileId }}
   {{ qrCodeLink }}
   <MainLayoutSubheader>
     <p v-if="store.state.auth.isAdmin" class="subheader-slot">Администратор</p>
@@ -78,7 +73,6 @@ export default {
       <ModalPopup ref="modalQrCode" class="modal__reset-pass">
         <div class="modal-qr-code">
           <div class="modal__header modal-qr-code__header">Наведите камеру на qr-код</div>
-          <!-- qr-code -->
           <div class="qr-code">
             <QrcodeVue :value="qrCodeLink" :size="qrCodeSize" level="H"/>
           </div>
@@ -97,7 +91,7 @@ export default {
                 width="32"
                 height="32"
               />
-              <a href="https://t.me/" class="user-sharing__link">Телеграм</a>
+              <a :href="qrCodeLink" class="user-sharing__link">Телеграм</a>
             </div>
           </div>
           <div class="user-sharing-item">
