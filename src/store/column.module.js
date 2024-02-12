@@ -338,7 +338,7 @@ export const column = {
           isVisible: visibleColumns.includes(value.data)
         }
       ))
-      //// console.log(columnFilter)
+      // console.log(columnFilter)
 
       commit('setColumnFilter', columnFilter)
     },
@@ -354,7 +354,7 @@ export const column = {
 
       if (saveFilter) {
         const visibleColumns = columnFilter.reduce((acc, value) => value.isVisible ? acc.concat([value.data]) : acc, [])
-        //// console.log(visibleColumns)
+        // console.log(visibleColumns)
         await dispatch("user/addFilter", visibleColumns, {root: true})
       }
       commit('setColumnFilter', columnFilter)

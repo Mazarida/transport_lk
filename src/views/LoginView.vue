@@ -46,7 +46,7 @@ export default {
 
       await store.dispatch("auth/login", formData)
           .then(() => { router.push('/') })
-          .catch((err) => { // console.log(err) })
+          .catch((err) => { console.log(err) })
     }
 
     return { state, v$, submitHandler, store, resetPassActive }

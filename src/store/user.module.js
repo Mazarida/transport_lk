@@ -111,7 +111,7 @@ export const user = {
         await UserService.setParams(rootGetters['auth/token'], curProfile)
         commit('getProfileSuccess', curProfile)
       } catch (e) {
-        //// console.log(e.message)
+        // console.log(e.message)
       }
     },
     async activateFilter({ commit, dispatch, rootGetters, state }, filterId) {
@@ -126,7 +126,7 @@ export const user = {
         await UserService.setParams(rootGetters['auth/token'], curProfile)
         commit('getProfileSuccess', curProfile)
       } catch (e) {
-        //// console.log(e.message)
+        // console.log(e.message)
       }
       //}
     },
@@ -142,7 +142,7 @@ export const user = {
           await UserService.setParams(rootGetters['auth/token'], curProfile)
           commit('getProfileSuccess', curProfile)
         } catch (e) {
-          //// console.log(e.message)
+          // console.log(e.message)
         }
       }
     },
@@ -151,8 +151,8 @@ export const user = {
       const curProfile = JSON.parse(JSON.stringify(state.userProfile))
       curProfile.params.columnFilters.splice(index, 1)
 
-      //// console.log(profile)
-      //// console.log(curProfile)
+      // console.log(profile)
+      // console.log(curProfile)
 
       if (index < state.userProfile.params.activeColumnFilter) {
         curProfile.params.activeColumnFilter = state.userProfile.params.activeColumnFilter - 1
@@ -169,7 +169,7 @@ export const user = {
         await UserService.setParams(rootGetters['auth/token'], curProfile)
         commit('getProfileSuccess', curProfile)
       } catch (e) {
-        //// console.log(e.message)
+        // console.log(e.message)
       }
     },
   },

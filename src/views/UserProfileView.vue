@@ -80,7 +80,7 @@ export default {
           v$.value.userPassword.$touch()
 
           if (v$.userPassword.$invalid) {
-            //// console.log('Password error')
+            // console.log('Password error')
             return
           }
 
@@ -114,7 +114,7 @@ export default {
             v$.value.userEmail.$invalid ||
             v$.value.userPhone.$invalid
           ) {
-            //// console.log('Fields error')
+            // console.log('Fields error')
             return
           }
 
@@ -150,7 +150,7 @@ export default {
             v$.value.userPhone.$invalid ||
             v$.value.userPassword.$invalid
           ) {
-            //// console.log('Fields or Password error')
+            // console.log('Fields or Password error')
             return
           }
 
