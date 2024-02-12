@@ -64,7 +64,6 @@ export default {
 </script>
 
 <template>
-  {{ qrCodeLink }}
   <MainLayoutSubheader>
     <p v-if="store.state.auth.isAdmin" class="subheader-slot">Администратор</p>
   </MainLayoutSubheader>
